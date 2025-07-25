@@ -1,0 +1,16 @@
+{
+  "name": "com.cf.card.Tests",
+  "rootNamespace": "Cf.CCard.Tests",
+  "references": [
+    "com.cf.card"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

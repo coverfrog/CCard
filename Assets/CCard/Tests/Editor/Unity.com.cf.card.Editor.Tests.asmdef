@@ -1,0 +1,19 @@
+{
+  "name": "com.cf.card.Editor.Tests",
+  "rootNamespace": "Cf.CCard.Editor.Tests",
+  "references": [
+    "com.cf.card",
+    "com.cf.card.Tests"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

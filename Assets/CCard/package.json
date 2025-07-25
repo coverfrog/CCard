@@ -1,0 +1,15 @@
+{
+  "name": "com.cf.card",
+  "version": "1.0.0",
+  "displayName": "com.cf.card",
+  "description": "com.cf.card",
+  "unity": null,
+  "unityRelease": null,
+  "dependencies": {},
+  "keywords": [],
+  "author": {
+    "name": null,
+    "email": null,
+    "url": null
+  }
+}
