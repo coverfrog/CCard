@@ -1,19 +1,17 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Cf.CCard
 {
     public class Card : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-        
-        }
+        public Prs originPrs;
 
-        // Update is called once per frame
-        void Update()
+        public void Move(Prs prs, float dur)
         {
-        
+            transform.DOMove(prs.position, dur);
+            transform.DORotateQuaternion(prs.rotation, dur);
+            transform.DOScale(prs.scale, dur);
         }
     }
 }
