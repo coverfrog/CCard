@@ -9,17 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5706d6a4abb1453b93ce41590a81d8a6, type: 3}
-  m_Name: Spread Option
+  m_Script: {fileID: 11500000, guid: 4721981249a6448e8cd26ee1b1130c77, type: 3}
+  m_Name: Stack Simple Sample
   m_EditorClassIdentifier: 
-  spreadDuration: 0.5
-  dataList:
-  - angleDeg: 0
-    width: 0
-    height: 0
-  - angleDeg: 50
-    width: 2.53
-    height: 0.5
-  - angleDeg: 50
-    width: 4
-    height: 0.5

@@ -5,13 +5,22 @@ namespace Cf.CCard
 {
     public class Card : MonoBehaviour
     {
-        public Prs originPrs;
+        [Header("Debug View")]
+        [SerializeField] private CardTransformData transformData;
 
-        public void Move(Prs prs, float dur)
+        public void TranslateTo(CardTransformData data, float dur, bool isScale)
         {
-            transform.DOMove(prs.position, dur);
-            transform.DORotateQuaternion(prs.rotation, dur);
-            transform.DOScale(prs.scale, dur);
+            transformData = data;
+            
+            transform.DOMove(data.position, dur);
+            transform.DORotateQuaternion(data.rotation, dur);
+
+            if (!isScale)
+            {
+                return;
+            }
+            
+            transform.DOScale(data.scale, dur);
         }
     }
 }
