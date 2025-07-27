@@ -1,19 +1,27 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cf.CCard
 {
     public class CardHandGroup : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField] private List<CardHand> mCardHandList = new List<CardHand>();
+
+        public void Init(Action onComplete)
         {
-        
+            StartCoroutine(CoInit(onComplete));
         }
 
-        // Update is called once per frame
-        void Update()
+        private IEnumerator CoInit(Action onComplete)
         {
+            yield return null;
+        }
         
+        public void AddHand(bool isMine, ulong id)
+        {
+            
         }
     }
 }
