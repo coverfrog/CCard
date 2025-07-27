@@ -281,12 +281,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456574091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1562412500}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456574093
 MonoBehaviour:
@@ -505,12 +505,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890353105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1562412500}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &890353107
 MonoBehaviour:
@@ -529,6 +529,8 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
+    m_CachedAsset: {fileID: 0}
+    m_CachedGUID: 
     m_EditorAssetChanged: 0
   mDeckPrefab: {fileID: 0}
   mDeckList: []
@@ -562,7 +564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mHandGroup: {fileID: 0}
-  mDeckGroup: {fileID: 0}
 --- !u!4 &1097810513
 Transform:
   m_ObjectHideFlags: 0
@@ -607,9 +608,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 456574092}
-  - {fileID: 890353106}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1562412501
@@ -625,7 +624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mHandGroup: {fileID: 456574093}
-  mDeckGroup: {fileID: 890353107}
 --- !u!1 &1703640210
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,3 +834,5 @@ SceneRoots:
   - {fileID: 848311377}
   - {fileID: 1713471140}
   - {fileID: 1562412500}
+  - {fileID: 456574092}
+  - {fileID: 890353106}

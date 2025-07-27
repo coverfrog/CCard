@@ -72,9 +72,14 @@ namespace Cf.CCard
             };
         }
 
-        public void AddHand(bool isMine, ulong id)
+        public CardHand AddHand(bool isMine, ulong id)
         {
+            CardHand hand = Instantiate(mHandPrefab, mHandPrefab.transform.position, mHandPrefab.transform.rotation, transform);
+            hand.Init(isMine, id);
             
+            mCardHandList.Add(hand);
+            
+            return hand;
         }
     }
 }
