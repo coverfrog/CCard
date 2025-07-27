@@ -34,6 +34,8 @@ namespace Cf.CCard
             {
                 yield return null;
             }
+            
+            onComplete?.Invoke();
         }
 
         private void InitPrefab(Action onComplete)
