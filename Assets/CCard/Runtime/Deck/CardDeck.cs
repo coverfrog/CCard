@@ -9,8 +9,13 @@ namespace Cf.CCard
 {
     public class CardDeck : MonoBehaviour
     {
+        [Header("Addressable")]
         [SerializeField] private AssetReference mCardReference;
-        [Space]
+        
+        [Header("Func")]
+        [SerializeField] private CardStack mCardStackFunc;
+        
+        [Header("Debug View")]
         [SerializeField] private Card mCardPrefab;
         [SerializeField] private List<Card> mCardsList = new List<Card>();
 
