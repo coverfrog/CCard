@@ -100,6 +100,8 @@ namespace Cf.CCard
                 mIsCollectionCheck,
                 mDefaultCapacity,
                 mMaxSize);
+            
+            onComplete?.Invoke();
         }
 
         private void ActionOnDestroy(Card obj)
