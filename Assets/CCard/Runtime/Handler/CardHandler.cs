@@ -8,7 +8,6 @@ namespace Cf.CCard
     public class CardHandler : MonoBehaviour
     {
         [SerializeField] private CardHandGroup mHandGroup;
-        [SerializeField] private CardDeckGroup mDeckGroup;
 
         public void Init(Action onComplete)
         {
@@ -26,11 +25,6 @@ namespace Cf.CCard
                 ++initCount;
             });
             
-            mDeckGroup.Init(() =>
-            {
-                ++initCount;
-            });
-
             while (initCount < initTarget)
             {
                 yield return null;
