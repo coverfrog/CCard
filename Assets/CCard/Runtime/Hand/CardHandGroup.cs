@@ -48,7 +48,7 @@ namespace Cf.CCard
                 return;
             }
             
-            Addressables.LoadAssetAsync<GameObject>(mHandPrefab).Completed += op =>
+            Addressables.LoadAssetAsync<GameObject>(mHandReference).Completed += op =>
             {
                 if (op.Status != AsyncOperationStatus.Succeeded)
                 {
