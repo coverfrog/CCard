@@ -521,19 +521,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 890353105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a977c6c635a4edcaa3f872f918c6a8b, type: 3}
+  m_Script: {fileID: 11500000, guid: ebd8e025e52b417a9c17bb9d1d0527dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDeckReference:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_CachedAsset: {fileID: 0}
-    m_CachedGUID: 
-    m_EditorAssetChanged: 0
-  mDeckPrefab: {fileID: 0}
-  mDeckList: []
+  mCardStackFunc: {fileID: 0}
 --- !u!1 &1097810511
 GameObject:
   m_ObjectHideFlags: 0
