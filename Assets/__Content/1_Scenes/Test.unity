@@ -256,6 +256,50 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &449680190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449680191}
+  - component: {fileID: 449680192}
+  m_Layer: 0
+  m_Name: Card System Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &449680191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449680190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &449680192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449680190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496231195d83e414287b0dbbd8151896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456574091
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890353106}
   - component: {fileID: 890353107}
+  - component: {fileID: 890353108}
   m_Layer: 0
   m_Name: Card Deck Grouup
   m_TagString: Untagged
@@ -524,7 +569,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd8e025e52b417a9c17bb9d1d0527dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mCardStackFunc: {fileID: 0}
+  mInitShuffle: 1
+  mShuffleCount: 2
+  mSpawnDelay: 0.01
+  mInitCardDeckData: {fileID: 11400000, guid: 77ef933984ecfed4fb0b1af02dd53015, type: 2}
+  mCardSpawner: {fileID: 890353108}
+  mCardStackFunc: {fileID: 11400000, guid: d39189f12f5d38c45bd96e7e7e2fafd4, type: 2}
+--- !u!114 &890353108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890353105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0a8d5e3cfb46de83ed47b9d9477135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mIsCollectionCheck: 1
+  mDefaultCapacity: 50
+  mMaxSize: 10000
+  mCardReference:
+    m_AssetGUID: e22ec4739939b8b47a3b886b386c62bb
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  mCardPrefab: {fileID: 0}
 --- !u!1 &1097810511
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,3 +899,4 @@ SceneRoots:
   - {fileID: 1562412500}
   - {fileID: 456574092}
   - {fileID: 890353106}
+  - {fileID: 449680191}

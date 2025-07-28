@@ -20,7 +20,7 @@ namespace Cf.CCard
         [Header("Debug View")]
         [SerializeField] private Card mCardPrefab;
         
-        private IObjectPool<Card> _mCardPool;
+        private IObjectPool<ICard> _mCardPool;
         
         public void Init(Action onComplete)
         {
@@ -92,7 +92,7 @@ namespace Cf.CCard
                 return;
             }
 
-            _mCardPool = new ObjectPool<Card>(
+            _mCardPool = new ObjectPool<ICard>(
                 PoolOnCreate, 
                 PoolOnGet, 
                 PoolOnRelease,
@@ -104,27 +104,27 @@ namespace Cf.CCard
             onComplete?.Invoke();
         }
         
-        private Card PoolOnCreate()
+        private ICard PoolOnCreate()
         {
             throw new NotImplementedException();
         }
 
-        private void PoolOnGet(Card obj)
+        private void PoolOnGet(ICard obj)
         {
             throw new NotImplementedException();
         }
         
-        private void PoolOnRelease(Card obj)
+        private void PoolOnRelease(ICard obj)
         {
             throw new NotImplementedException();
         }
         
-        private void PoolOnDestroy(Card obj)
+        private void PoolOnDestroy(ICard obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Get(out Card card)
+        public void Get(out ICard card)
         {
             if (_mCardPool == null)
             {

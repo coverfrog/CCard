@@ -20,5 +20,13 @@ namespace Cf.CCard
         [SerializeField] private List<Option> mOptionList = new List<Option>();
         
         public IReadOnlyList<Option> OptionList => mOptionList;
+        
+        public CardDeckData Clone()
+        {
+            var ins = CreateInstance<CardDeckData>();
+            ins.mOptionList = mOptionList;
+
+            return ins;
+        }
     }
 }

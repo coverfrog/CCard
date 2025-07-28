@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Cf.CCard
 {
-    public class Card : MonoBehaviour
+    public class Card : MonoBehaviour, ICard
     {
         [Header("Debug View")]
         [SerializeField] private CardTransformData transformData;
