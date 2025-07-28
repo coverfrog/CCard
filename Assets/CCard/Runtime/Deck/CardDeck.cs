@@ -74,20 +74,6 @@ namespace Cf.CCard
             _mCardDataList.Add(cardData);
         }
 
-        public bool Draw(out CardData cardData)
-        {
-            if (_mCardDataList.Count == 0)
-            {
-                cardData = null;
-                return false;
-            }
-            
-            cardData = _mCardDataList[^1];
-            _mCardDataList.RemoveAt(_mCardDataList.Count - 1);
-
-            return true;
-        }
-        
         public void Report()
         {
             string msg = "--- Card Deck ---\n";

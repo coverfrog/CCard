@@ -17,6 +17,8 @@ namespace Cf.CCard
         private List<ICard> _mCardList;
 
         private IReadOnlyList<CardData> CardDataList => _mCardDeck?.CardDataList;
+
+        public event Action OnStackEnd;
         
         private void Start()
         {
@@ -37,9 +39,29 @@ namespace Cf.CCard
                 Debug.Log("[ Card Stack ] Complete");
 #endif
                 _mCardList = cardList;
+                
+                OnStackEnd?.Invoke();
             });
         }
 
+        public bool Get(out ICard card)
+        {
+            if (_mCardList.Count == 0)
+            {
+                card = null;
+                return false;
+            }
+
+            card = _mCardList[^1];
+            _mCardList.RemoveAt(_mCardList.Count - 1);
+
+#if true
+            Debug.Log($"[ Card Deck ] Remain At : {_mCardList.Count}");
+#endif
+            
+            return true;
+        }
+        
         [ContextMenu("> Report")]
         public void Report()
         {

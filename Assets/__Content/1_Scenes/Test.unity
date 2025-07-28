@@ -375,6 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397437469}
   - component: {fileID: 1397437470}
+  - component: {fileID: 1397437471}
   m_Layer: 0
   m_Name: Card Hand Behaviour
   m_TagString: Untagged
@@ -391,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 1397437468}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -409,6 +410,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69394829175ef3429a85067f0640296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mDeckBehaviour: {fileID: 1394220990}
+  mSpreadBehaviour: {fileID: 1397437471}
+--- !u!114 &1397437471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397437468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9651e4d187c66b740b07ba9ba79046a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mCardSpread: {fileID: 11400000, guid: cb5c4de4cb41d884ebbeec064fa92158, type: 2}
 --- !u!1 &1938608926
 GameObject:
   m_ObjectHideFlags: 0

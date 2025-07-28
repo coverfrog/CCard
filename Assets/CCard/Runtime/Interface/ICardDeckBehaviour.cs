@@ -5,5 +5,9 @@
         void Initialize();
 
         void Stack();
+
+        bool Get(out ICard card);
+        
+        void Report();
     }
 }
