@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: ae544257e18da4649be417fe792be20a
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 97d2f2041c102604d853de6b51c6098b
+    m_Address: Assets/__Content/3_Prefabs/Card Simple.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c78817de7b58b2b449ef7fb667f31b23, type: 2}
   m_SchemaSet:

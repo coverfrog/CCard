@@ -28,7 +28,6 @@ namespace Cf.CCard
         public override void Stack(ICard card, int current, Action<int> onComplete)
         {
             card.Tr.localPosition = Vector3.up * mBeginHeight;
-            card.Tr.gameObject.SetActive(false);
             
             float delay = mDelay * current;
             float endHeight = mIsOverlap ? mEndHeight : mUnitHeight * current;

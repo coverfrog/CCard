@@ -33,7 +33,7 @@ namespace Cf.CCard
 
         private void FirstDraw()
         {
-            const int target = 4;
+            const int target = 3;
 
             int count = 0;
             

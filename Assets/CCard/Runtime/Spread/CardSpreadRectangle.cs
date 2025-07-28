@@ -10,7 +10,8 @@ namespace Cf.CCard
     public class CardSpreadRectangle : CardSpread
     {
         [SerializeField] private float mRadius= 1.5f;
-        [SerializeField] private float mDuration = 0.5f;
+        [SerializeField] private float mDurationSpread = 0.5f;
+        [SerializeField] private float mDurationFlip = 0.5f;
             
         public override void Spread(List<ICard> cardList)
         {
@@ -29,7 +30,10 @@ namespace Cf.CCard
                 
                 float x = Mathf.Lerp(-mRadius, +mRadius, t);
 
-                cardList[i].Tr.DOLocalMove(new Vector3(x, 0, 0), mDuration);
+                Sequence seq = DOTween.Sequence();
+                
+                seq.Append( cardList[i].Tr.DOLocalMove(new Vector3(x, 0, 0), mDurationSpread));
+                seq.Append( cardList[i].Tr.DORotate(new Vector3(0, -0, 0), mDurationFlip));
             }
         }
     }

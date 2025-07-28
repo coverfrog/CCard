@@ -25,6 +25,8 @@ namespace Cf.CCard
             Debug.Assert(mCardStackFunc != null, "Card Stack Func is null");
             
             ICard card = mSpawnBehaviour.Get();
+            card.Tr.rotation = Quaternion.Euler(0, 0, 180);
+            card.Tr.gameObject.SetActive(false);
             card.Tr.SetParent(transform);
             card.Initialize(cardData);
             
