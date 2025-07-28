@@ -1,116 +1,104 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using Random = UnityEngine.Random;
 
 namespace Cf.CCard
 {
-    public class CardDeck : MonoBehaviour
+    public class CardDeck : ICardDeck
     {
-        [Header("Init")] 
-        [SerializeField] private bool mInitShuffle = true;
-        [SerializeField][Min(1)] private int mShuffleCount = 2;
-        [SerializeField] private float mSpawnDelay = 0.01f;
-        [SerializeField] private CardDeckData mInitCardDeckData;
-        
-        [Header("References")]
-        [SerializeField] private CardSpawner mCardSpawner;
-        
-        [Header("Func")]
-        [SerializeField] private CardStack mCardStackFunc;
-        
-        [Header("Debug View")]
-        [SerializeField] private List<CardData> mCardDataList = new List<CardData>();
-        
-        private Stack<Card> _mCardsStack = new Stack<Card>();
+        private readonly List<CardData> _mCardDataList = new();
 
-        public void Init(Action onComplete)
+        public IReadOnlyList<CardData> CardDataList => _mCardDataList;
+        
+        public CardDeck()
         {
-            if (!mInitCardDeckData)
-            {
-#if UNITY_EDITOR
-                Debug.Assert(false, "CardDeckData is not set");
-#endif    
-                return;
-            }
-
-            if (!mCardSpawner)
-            {
-#if UNITY_EDITOR
-                Debug.Assert(false, "CardDeckData is not set");
-#endif
-                return;
-            }
             
-            StartCoroutine(CoInit(onComplete));
         }
-
-        private IEnumerator CoInit(Action onComplete)
+        
+        public CardDeck(CardDeckData data, bool isShuffle)
         {
-            // option
-            var optionList = mInitCardDeckData.Clone().OptionList;
-            
-            // copy
-            var cardDataList = new List<CardData>(optionList.Count);
-            foreach (CardDeckData.Option option in optionList)
+            if (!data)
             {
-                for (int i = 0; i < option.Count; i++)
+                return;
+            }
+
+            foreach (CardDeckData.Option option in data.OptionList)
+            {
+                for (int i = 0; i < option.count; i++)
                 {
-                    cardDataList.Add(option.Data);
+                    _mCardDataList.Add(option.data);
                 }
             }
-            
-            // value
-            mCardDataList.Clear();
-            mCardDataList.AddRange(cardDataList);
-            
-            // shuffle
-            if (!mInitShuffle)
+
+            if (!isShuffle)
             {
-                yield break;
+                return;
+            }
+
+            Shuffle();
+        }
+
+        public void Shuffle()
+        {
+            if (ReferenceEquals(_mCardDataList, null))
+            {
+                return;
             }
             
-            // rand index
-            int count = cardDataList.Count;
+            int count = _mCardDataList.Count;
+            var temp = new List<CardData>(count);
             int[] indexes = Enumerable.Range(0, count).ToArray();
 
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < count; j++)
                 {
-                    int randIndex = Random.Range(0, count);
+                    int r = Random.Range(0, count);
 
-                    (indexes[j], indexes[randIndex]) = (indexes[randIndex], indexes[j]);
+                    (indexes[j], indexes[r]) = (indexes[r], indexes[j]);
                 }
             }
-            
-            // spawn
-            mCardDataList.Clear();
+
             for (int i = 0; i < count; i++)
             {
-                CardData data = cardDataList[indexes[i]];
-                
-                mCardDataList.Add(data);
-                
-                mCardSpawner.Get(out ICard card);
-                
-                // var builder = new CardBuilder();
-                //
-                // card.Init(data);
+                temp.Add(_mCardDataList[indexes[i]]);
             }
             
-            yield return null;
+            _mCardDataList.Clear();
+            _mCardDataList.AddRange(temp);
+        }
+
+        public void Stack(CardData cardData)
+        {
+            _mCardDataList.Add(cardData);
+        }
+
+        public bool Draw(out CardData cardData)
+        {
+            if (_mCardDataList.Count == 0)
+            {
+                cardData = null;
+                return false;
+            }
+            
+            cardData = _mCardDataList[^1];
+            _mCardDataList.RemoveAt(_mCardDataList.Count - 1);
+
+            return true;
         }
         
-        public void Stack(Card card)
+        public void Report()
         {
-            mCardStackFunc.Stack();
+            string msg = "--- Card Deck ---\n";
+            int count = _mCardDataList.Count;
             
-            _mCardsStack.Push(card);
+            for (int i = 0; i < count; i++)
+            {
+                msg += $"[ {i} ] {_mCardDataList[i].DisplayName}\n";
+            }
+            
+            Debug.Log(msg);
         }
     }
 }
