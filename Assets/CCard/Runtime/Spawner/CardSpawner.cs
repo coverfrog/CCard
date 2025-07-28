@@ -93,35 +93,50 @@ namespace Cf.CCard
             }
 
             _mCardPool = new ObjectPool<Card>(
-                CreateFunc, 
-                ActionOnGet, 
-                ActionOnRelease,
-                ActionOnDestroy,
+                PoolOnCreate, 
+                PoolOnGet, 
+                PoolOnRelease,
+                PoolOnDestroy,
                 mIsCollectionCheck,
                 mDefaultCapacity,
                 mMaxSize);
             
             onComplete?.Invoke();
         }
-
-        private void ActionOnDestroy(Card obj)
+        
+        private Card PoolOnCreate()
         {
             throw new NotImplementedException();
         }
 
-        private void ActionOnRelease(Card obj)
+        private void PoolOnGet(Card obj)
+        {
+            throw new NotImplementedException();
+        }
+        
+        private void PoolOnRelease(Card obj)
+        {
+            throw new NotImplementedException();
+        }
+        
+        private void PoolOnDestroy(Card obj)
         {
             throw new NotImplementedException();
         }
 
-        private void ActionOnGet(Card obj)
+        public void Get(out Card card)
         {
-            throw new NotImplementedException();
-        }
+            if (_mCardPool == null)
+            {
+#if UNITY_EDITOR
+                Debug.Assert(false, "CardReference is not valid");
+#endif
+                card = null;
+                
+                return;
+            }
 
-        private Card CreateFunc()
-        {
-            throw new NotImplementedException();
+            _mCardPool.Get(out card);
         }
     }
 }
