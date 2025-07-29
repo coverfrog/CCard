@@ -411,7 +411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mIsMine: 1
-  mDeckBehaviour: {fileID: 1394220990}
   mSpreadBehaviour: {fileID: 1397437471}
 --- !u!114 &1397437471
 MonoBehaviour:
@@ -564,7 +563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1988760041
 Transform:
   m_ObjectHideFlags: 0
@@ -606,7 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mIsMine: 0
-  mDeckBehaviour: {fileID: 1394220990}
   mSpreadBehaviour: {fileID: 1988760042}
 --- !u!1 &2034349505
 GameObject:
