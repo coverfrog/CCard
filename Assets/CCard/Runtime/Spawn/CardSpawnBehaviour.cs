@@ -13,6 +13,8 @@ namespace Cf.CCard
         
         private CardSpawn _mCardSpawn;
 
+        public bool IsInitialized { get; private set; }
+
         private void Start()
         {
             Initialize();
@@ -27,6 +29,8 @@ namespace Cf.CCard
                 mCollectionCheck,
                 mDefaultCapacity,
                 mMaxSize);
+
+            IsInitialized = true;
         }
 
         private ICard Create()

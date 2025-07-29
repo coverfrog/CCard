@@ -20,6 +20,8 @@ namespace Cf.CCard
 
         public event Action OnStackEnd;
         
+        public bool IsInitialized { get; private set; }
+        
         private void Start()
         {
             Initialize();
@@ -28,6 +30,8 @@ namespace Cf.CCard
         public void Initialize()
         {
             _mCardDeck = new CardDeck(mInitCardDeckData, true);
+
+            IsInitialized = true;
         }
 
         [ContextMenu("> Stack")]
