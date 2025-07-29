@@ -19,9 +19,9 @@ namespace Cf.CCard
             
         }
 
-        public void Spread(List<ICard> cardList)
+        public void Spread(bool isMine, List<ICard> cardList)
         {
-            mCardSpread?.Spread(cardList);
+            mCardSpread?.Spread(isMine, cardList);
         }
     }
 }

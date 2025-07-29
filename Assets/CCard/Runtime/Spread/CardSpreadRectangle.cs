@@ -13,7 +13,7 @@ namespace Cf.CCard
         [SerializeField] private float mDurationSpread = 0.5f;
         [SerializeField] private float mDurationFlip = 0.5f;
             
-        public override void Spread(List<ICard> cardList)
+        public override void Spread(bool isMine, List<ICard> cardList)
         {
             int count = cardList.Count;
 
@@ -33,6 +33,12 @@ namespace Cf.CCard
                 Sequence seq = DOTween.Sequence();
                 
                 seq.Append( cardList[i].Tr.DOLocalMove(new Vector3(x, 0, 0), mDurationSpread));
+
+                if (!isMine)
+                {
+                    continue;
+                }
+                
                 seq.Append( cardList[i].Tr.DORotate(new Vector3(0, -0, 0), mDurationFlip));
             }
         }

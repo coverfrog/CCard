@@ -8,6 +8,9 @@ namespace Cf.CCard
     [RequireComponent(typeof(CardSpreadBehaviour))]
     public class CardHandBehaviour : MonoBehaviour, ICardHandBehaviour
     {
+        [Header("[ Flag ]")] 
+        [SerializeField] private bool mIsMine;
+        
         [Header("[ References ]")]
         [SerializeField] private CardDeckBehaviour mDeckBehaviour;
         [SerializeField] private CardSpreadBehaviour mSpreadBehaviour;
@@ -33,7 +36,7 @@ namespace Cf.CCard
 
         private void FirstDraw()
         {
-            const int target = 3;
+            const int target = 4;
 
             int count = 0;
             
@@ -66,7 +69,7 @@ namespace Cf.CCard
         [ContextMenu("> Spread")]
         public void Spread()
         {
-            mSpreadBehaviour?.Spread(_mCardList);
+            mSpreadBehaviour?.Spread(mIsMine, _mCardList);
         }
     }
 }

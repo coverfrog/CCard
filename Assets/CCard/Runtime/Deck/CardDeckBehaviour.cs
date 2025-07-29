@@ -55,7 +55,7 @@ namespace Cf.CCard
             card = _mCardList[^1];
             _mCardList.RemoveAt(_mCardList.Count - 1);
 
-#if true
+#if UNITY_EDITOR && false
             Debug.Log($"[ Card Deck ] Remain At : {_mCardList.Count}");
 #endif
             

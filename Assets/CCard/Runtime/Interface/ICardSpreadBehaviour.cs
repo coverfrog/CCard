@@ -6,6 +6,6 @@ namespace Cf.CCard
     {
         void Initialize();
         
-        void Spread(List<ICard> cardList);
+        void Spread(bool isMine, List<ICard> cardList);
     }
 }

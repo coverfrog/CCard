@@ -42,7 +42,7 @@ namespace Cf.CCard
         [Header("Time")]
         [SerializeField] private float mDuration = 0.5f;
         
-        public override void Spread(List<ICard> cardList)
+        public override void Spread(bool isMine, List<ICard> cardList)
         {
             Debug.Assert(mOptionList.Count > 0, "Option list is empty");
             

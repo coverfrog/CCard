@@ -4,6 +4,6 @@ namespace Cf.CCard
 {
     public interface ICardSpread
     {
-        void Spread(List<ICard> cardList);
+        void Spread(bool isMine, List<ICard> cardList);
     }
 }
